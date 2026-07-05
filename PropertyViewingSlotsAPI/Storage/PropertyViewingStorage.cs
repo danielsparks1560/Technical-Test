@@ -45,6 +45,9 @@ namespace Property_Viewing_Slots_API.Storage
                 return [];
 
             var json = File.ReadAllText(_filePath);
+            if (string.IsNullOrWhiteSpace(json))
+                return [];
+
             return JsonSerializer.Deserialize<List<PropertyViewing>>(json) ?? [];
         }
 
