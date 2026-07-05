@@ -1,0 +1,6 @@
+@Property_Viewing_Slots_API_HostAddress = http://localhost:5124
+
+GET {{Property_Viewing_Slots_API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
