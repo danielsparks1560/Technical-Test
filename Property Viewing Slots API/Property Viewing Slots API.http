@@ -1,6 +1,22 @@
 @Property_Viewing_Slots_API_HostAddress = http://localhost:5124
 
-GET {{Property_Viewing_Slots_API_HostAddress}}/weatherforecast/
+###
+
+### Book a property viewing
+POST {{Property_Viewing_Slots_API_HostAddress}}/propertyviewing/book
+Content-Type: application/json
+Accept: application/json
+
+{
+  "propertyId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "userId": "f1e2d3c4-b5a6-7890-abcd-ef0987654321",
+  "startTime": "2026-07-10T10:00:00"
+}
+
+###
+
+### Search viewings for a property within a date range
+GET {{Property_Viewing_Slots_API_HostAddress}}/propertyviewing/search?propertyId=a1b2c3d4-e5f6-7890-abcd-ef1234567890&startDate=2026-07-01T00:00:00&endDate=2026-07-31T23:59:59
 Accept: application/json
 
 ###
