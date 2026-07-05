@@ -30,3 +30,7 @@ The storage is the big impact again but I've said alot about that.
 I have currently separated the different layers in a single csproj in different namespaces and folders, as this is just a small API and having one csproj also helps with build times. However if we were to expand and more applications relied on the different layers is to then separate these out into different csproj files.
 
 Another BIG change in architecture i would love to have done if i had the time is to make the viewing booking times less "loose". E.g. every 15 mins for a start of a booking instead of being able to book it at any time like 10:08. This would also open up the possibility of easily checking which "slot" is booked and what is "available" rather than just requesting a time and it would seem more of an intuitive experience"
+
+**AI Usage**
+
+I used claude during development to help me with the standard boiler plate and interfaces after i described what i want. i also used it to help with test cases i may have missed as i mainly wanted to test the business logic in the service, and the storage.
