@@ -16,13 +16,23 @@ namespace Property_Viewing_Slots_API.Controllers
         }
 
         [HttpPost("book", Name = "BookViewing")]
+        [ProducesResponseType(typeof(PropertyViewing), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
         public ActionResult<PropertyViewing> BookViewing([FromBody] BookViewingRequest request)
         {
-            var booking = _service.BookViewing(request);
-            return CreatedAtAction(nameof(BookViewing), new { id = booking.Id }, booking);
+            try
+            {
+                var booking = _service.BookViewing(request);
+                return CreatedAtAction(nameof(BookViewing), new { id = booking.Id }, booking);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { error = ex.Message });
+            }
         }
 
         [HttpGet("search", Name = "SearchViewings")]
+        [ProducesResponseType(typeof(IEnumerable<PropertyViewing>), StatusCodes.Status200OK)]
         public ActionResult<IEnumerable<PropertyViewing>> SearchViewings(
             [FromQuery] Guid propertyId,
             [FromQuery] DateTime startDate,
