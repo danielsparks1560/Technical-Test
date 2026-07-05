@@ -1,3 +1,4 @@
 <Solution>
-  <Project Path="Property Viewing Slots API/Property Viewing Slots API.csproj" />
+  <Project Path="Property Viewing Slots API/PropertyViewingSlotsAPI.csproj" />
+  <Project Path="PropertyViewingSlotsAPI.UnitTests/PropertyViewingSlotsAPI.UnitTests.csproj" Id="07f499fc-9418-40a3-b48e-7ee4bdb80349" />
 </Solution>
